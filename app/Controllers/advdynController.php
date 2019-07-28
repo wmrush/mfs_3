@@ -13,13 +13,14 @@ class advdynController extends UserAccount
 
     public function indexAction()
     {
-        $ConfDyn = $this->LoadConfig("default");
+        //$ConfDyn = $this->LoadConfig("default");
 
-        $data['config'] = $ConfDyn;
+        //$data['config'] = $ConfDyn;
 
         $data['UserInfo'] = $this->UserInfo;
         $data['County'] = $this->LoadConfig("default");
         $this->tpl('layouts', 'advertise/dinamic', $data);
+
     }
 
 
