@@ -1,9 +1,7 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: molar
- * Date: 26.07.2019
- * Time: 9:26
+ * WmRush
+ * MFS 3.0
  */
 
 namespace App\Controllers;
@@ -17,6 +15,7 @@ class advdynController extends UserAccount
     {
         $ConfDyn = $this->LoadConfig("default");
 
+        $data['config'] = $ConfDyn;
 
         $data['UserInfo'] = $this->UserInfo;
         $data['County'] = $this->LoadConfig("default");
