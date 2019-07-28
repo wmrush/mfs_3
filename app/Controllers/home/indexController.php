@@ -1,6 +1,6 @@
 <?
 
-namespace App\Controllers;
+namespace App\Controllers\Home;
 
 
 use Engine\Core\Controller;
@@ -29,7 +29,7 @@ class IndexController extends Controller
     public function indexAction()
     {
         $data['UserInfo'] = ["uUid" => 1, "Login" => "WmRush"];
-        echo $this->wmrush->Tpl('layouts', 'test', $data);
+        $this->tpl('layouts', 'test', $data);
         // $User = new User();
         // $q = $User->query("INSERT INTO db_Users (uLogin, uEmail, uPassword) VALUES ('WmRush1', 'ma@aa.ru', 'aaaa')");
         //var_dump($User->insertId());

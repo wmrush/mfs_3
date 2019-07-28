@@ -96,7 +96,7 @@ class Router
             // Route rule matched
             if (preg_match('#^' . $route . '$#', $uri, $matches)) {
                 /* 
-                // TODO: Handler placeholders
+
                 if (strpos($handler, '$') !== false) {
                 $handler = preg_replace('#^'.$route.'$#', $handler, $uri);
                 } */
@@ -120,10 +120,11 @@ class Router
         } // execute action in controllers
         elseif (strpos($handler, '@')) {
             $ca = explode('@', $handler);
-            $controllerName = $ca[0];
-            $action = $ca[1];
+            $Folders = $ca[0];
+            $controllerName = $ca[1];
+            $action = $ca[2];
 
-            $controllerName = '\\App\\Controllers\\' . $controllerName;
+            $controllerName = '\\App\\Controllers\\' . $Folders . '\\' . $controllerName;
 
             if (class_exists($controllerName)) {
                 $controller = new $controllerName();

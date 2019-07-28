@@ -7,7 +7,6 @@ namespace Engine\Core;
 class Views
 {
 
-    private $defaultTemplate = 'default';
     public $session;
 
     public function __construct()
@@ -28,7 +27,7 @@ class Views
     public function render($template, $vars = [], $return = false)
     {
 
-        $fileTemplatesInclude = ROOT_DIR . '/app/Views/' . $this->defaultTemplate . '/' . $template . '.php';
+        $fileTemplatesInclude = ROOT_DIR . '/app/Views/' . $template . '.php';
 
         if (!file_exists($fileTemplatesInclude)) {
             exit("No template " . $fileTemplatesInclude);

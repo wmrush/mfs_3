@@ -61,11 +61,18 @@ abstract class Controller
 
     }
 
-    public function tpl($layouts, $block, $data = [])
+    public function tplUser($block, $data = [])
     {
         $data['InfoSite'] = ["title" => $this->settings["sSiteName"], "desc" => $this->settings["sDesc"]];
-        $data['CONTENT'] = $this->view->render($block, $data, true);
-        echo $this->view->render($layouts, $data);
+        $data['CONTENT'] = $this->view->render('user/' . $block, $data, true);
+        echo $this->view->render("user/layouts", $data);
+    }
+
+    public function tplAdmin($block, $data = [])
+    {
+        $data['InfoSite'] = ["title" => $this->settings["sSiteName"], "desc" => $this->settings["sDesc"]];
+        $data['CONTENT'] = $this->view->render('admin/' . $block, $data, true);
+        echo $this->view->render("admin/layouts", $data);
     }
 
 

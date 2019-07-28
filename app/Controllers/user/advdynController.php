@@ -4,7 +4,7 @@
  * MFS 3.0
  */
 
-namespace App\Controllers;
+namespace App\Controllers\User;
 
 
 class advdynController extends UserAccount

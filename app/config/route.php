@@ -1,9 +1,27 @@
 <?php
+/**
+ * Роуты проекта
+ * формат: дерриктория@контроллер@метод
+ */
 return [
-    '' => 'IndexController@indexAction', //Главная страница
-    '/' => 'IndexController@indexAction', //Главная страница
-    '/auth' => 'AuthController@indexAction', //Страница авторизации
-    '/reg' => 'regController@indexAction', //Страница Регистрации
-    '/account' => 'accountController@indexAction', //Страница Регистрации
-    '/adv-din' => 'advdynController@indexAction', //Страница Регистрации
+    /**
+     * Прочие роуты
+     */
+    '' => 'home@indexController@indexAction', //Главная страница
+    '/auth' => 'home@authController@indexAction', //Страница авторизации
+    '/reg' => 'home@regController@indexAction', //Страница Регистрации
+
+    /**
+     * Роуты аккаунта
+     */
+    '/account' => 'user@accountController@indexAction', //Страница Регистрации
+    '/adv-din' => 'user@advdynController@indexAction', //Страница Регистрации
+
+
+    /**
+     * Роуты админки
+     */
+    '/admin' => 'admin@indexController@indexAction', //Страница Регистрации
+    '/admin/auth' => 'admin@authController@indexAction', //Страница Регистрации
+
 ];
