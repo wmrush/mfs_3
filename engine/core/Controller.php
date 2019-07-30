@@ -38,7 +38,6 @@ abstract class Controller
 {
 
     public $view;
-    public $settings;
     public $input;
     public $session;
     public $uri;
@@ -48,8 +47,6 @@ abstract class Controller
 
     public function __construct()
     {
-        $settings = new Settings();
-        $this->settings = $settings->getSettings();
         $this->session = new Session();
         $this->input = new Input();
         $this->view = new Views();
@@ -63,14 +60,16 @@ abstract class Controller
 
     public function tplUser($block, $data = [])
     {
-        $data['InfoSite'] = ["title" => $this->settings["sSiteName"], "desc" => $this->settings["sDesc"]];
+        $Conf = $this->LoadConfig("site");
+        $data['InfoSite'] = ["title" => $Conf["site_name"], "desc" => $Conf["site_desc"]];
         $data['CONTENT'] = $this->view->render('user/' . $block, $data, true);
         echo $this->view->render("user/layouts", $data);
     }
 
     public function tplAdmin($block, $data = [])
     {
-        $data['InfoSite'] = ["title" => $this->settings["sSiteName"], "desc" => $this->settings["sDesc"]];
+        $Conf = $this->LoadConfig("site");
+        $data['InfoSite'] = ["title" => $Conf["site_name"], "desc" => $Conf["site_desc"]];
         $data['CONTENT'] = $this->view->render('admin/' . $block, $data, true);
         echo $this->view->render("admin/layouts", $data);
     }
@@ -86,6 +85,8 @@ abstract class Controller
         return [];
 
     }
+
+
 
 
 }

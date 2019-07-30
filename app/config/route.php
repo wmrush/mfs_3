@@ -22,6 +22,8 @@ return [
      * Роуты админки
      */
     '/admin' => 'admin@indexController@indexAction', //Страница Регистрации
-    '/admin/auth' => 'admin@authController@indexAction', //Страница Регистрации
+    '/admin/auth' => 'admin@authController@indexAction', //Страница авторизации админа
+    '/admin/config-surfing' => 'admin@configsurfingController@indexAction', //Страница авторизации админа
+    '/admin/config-site' => 'admin@configsiteController@indexAction', //Страница авторизации админа
 
 ];

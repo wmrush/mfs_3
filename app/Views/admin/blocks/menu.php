@@ -40,7 +40,12 @@
                 </a>
                 <ul>
                     <li>
-                        <a href="ui_alerts.html" title="Серфинг">
+                        <a href="/admin/config-site" title="Серфинг">
+                            <span class="nav-link-text">Настройки сайта</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/admin/config-surfing" title="Серфинг">
                             <span class="nav-link-text">Серфинг</span>
                         </a>
                     </li>

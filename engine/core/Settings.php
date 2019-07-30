@@ -17,9 +17,7 @@ class Settings
     public function getSettings()
     {
 
-        $this->db = Database::instance();
-        $Query = $this->db->fetch("SELECT * FROM db_Settings");
-        return $Query;
+
 
     }
 

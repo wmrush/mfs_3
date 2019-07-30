@@ -73,4 +73,23 @@ class WmRush
     }
 
 
+    public function saveConfigAdmin($config, $post)
+    {
+        $path = ROOT_DIR . "/app/config/" . $config . ".php";
+        $handler = fopen($path, "w");
+        fwrite($handler, "<?php \r\n return [\r\n");
+
+        foreach ($post as $name => $value) {
+            if($name == "csrf") continue;
+            if($name == "save_config_admin") continue;
+            $value = htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
+            fwrite($handler, "'{$name}' => \"{$value}\",\r\n");
+
+        }
+
+        fwrite($handler, "];\r\n");
+        fclose($handler);
+    }
+
+
 }

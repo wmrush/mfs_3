@@ -4,8 +4,6 @@ namespace App\Libs;
 
 
 use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
 
 class Mail
 {
@@ -13,19 +11,22 @@ class Mail
 
     public function SendEmail($Email, $Subject, $Text)
     {
+        if (file_exists(ROOT_DIR . "/app/config/email.php")) {
+            $Config = require ROOT_DIR . "/app/config/email.php";
+        }
         $mail = new PHPMailer();
 
-        $mail->SMTPDebug = 0;                                       // Enable verbose debug output
+        $mail->SMTPDebug = 0;                                        // Enable verbose debug output
         $mail->isSMTP();                                            // Set mailer to use SMTP
-        $mail->Host = 'smtp.yandex.ru';  // Specify main and backup SMTP servers
+        $mail->Host = $Config['server'];  // Specify main and backup SMTP servers
         $mail->SMTPAuth = true;                                   // Enable SMTP authentication
-        $mail->Username = 'support@overhash.com';                     // SMTP username
-        $mail->Password = 'fhntvhfrjd1552';                               // SMTP password
+        $mail->Username = $Config['login'];                     // SMTP username
+        $mail->Password = $Config['pass'];                               // SMTP password
         $mail->SMTPSecure = 'ssl';                                  // Enable TLS encryption, `ssl` also accepted
-        $mail->Port = 465;                                    // TCP port to connect to
+        $mail->Port = $Config['port'];                                    // TCP port to connect to
 
         //Recipients
-        $mail->setFrom('support@overhash.com', 'Administrator');
+        $mail->setFrom($Config['login'], 'Administrator');
         $mail->addAddress($Email);     // Add a recipient
 
 

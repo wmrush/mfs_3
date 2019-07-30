@@ -9,7 +9,7 @@ use Engine\Core\Views;
 use Engine\Core\Settings;
 
 
-class IndexController extends Controller
+class indexController extends Controller
 {
 
     public $view;
@@ -29,7 +29,7 @@ class IndexController extends Controller
     public function indexAction()
     {
         $data['UserInfo'] = ["uUid" => 1, "Login" => "WmRush"];
-        $this->tpl('layouts', 'test', $data);
+        $this->tplUser('layouts', 'test', $data);
         // $User = new User();
         // $q = $User->query("INSERT INTO db_Users (uLogin, uEmail, uPassword) VALUES ('WmRush1', 'ma@aa.ru', 'aaaa')");
         //var_dump($User->insertId());

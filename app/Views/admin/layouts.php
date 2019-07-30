@@ -1,19 +1,9 @@
 <!DOCTYPE html>
-<!--
-Template Name:  SmartAdmin Responsive WebApp - Template build with Twitter Bootstrap 4
-Version: 4.0.0
-Author: Sunnyat Ahmmed
-Website: http://gootbootstrap.com
-Purchase: https://wrapbootstrap.com/theme/smartadmin-responsive-webapp-WB0573SK0
-License: You must have a valid license purchased only from wrapbootstrap.com (link above) in order to legally use this theme for your project.
--->
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>
-        MFS 3.0 AdminPanel
-    </title>
-    <meta name="description" content="Basic Inputs">
+    <title><?= $InfoSite['title']; ?></title>
+    <meta data-react-helmet="true" name="description" content="<?= $InfoSite['desc']; ?>"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no, minimal-ui">
     <!-- Call App Mode on ios devices -->
