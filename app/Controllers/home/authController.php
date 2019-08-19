@@ -48,7 +48,7 @@ class AuthController extends Controller
         }
 
 
-        echo $this->Tpl('layouts', 'auth');
+        echo $this->tplUser('auth');
 
 
     }

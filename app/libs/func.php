@@ -65,3 +65,10 @@ function Csrf()
     return '<input type="hidden" name="csrf" value="' . $Hash . '">';
 }
 
+function CheckCsrf($Csrf)
+{
+    if($Csrf !== $_SESSION['csrf']) return false;
+
+    return true;
+}
+

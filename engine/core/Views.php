@@ -2,7 +2,6 @@
 
 namespace Engine\Core;
 
-//use Engine\Helpers\Session;
 
 class Views
 {
@@ -55,6 +54,5 @@ class Views
 
 
     }
-
 
 }
